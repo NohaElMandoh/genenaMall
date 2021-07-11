@@ -19,14 +19,14 @@
                             </path>
                         </svg> </button>
 
-
+                </li>
+                <li class="mega-menu"> 
+                    <a class="level-top active" href="{{route('home')}}"><span>{{__('home.Home')}} </span></a>
                 </li>
 
+                <li class="drop-menu">
+                     <a href="{{route('entertainment')}}"> <span>{{__('home.Entertainment')}}</span> </a></li>
 
-                <li class="mega-menu"> <a class="level-top active" href="{{route('home')}}"><span>{{__('home.Home')}} </span></a></li>
-
-
-                <li class="drop-menu"> <a href="{{route('entertainment')}}"> <span>{{__('home.Entertainment')}}</span> </a></li>
                 <li class="mega-menu">
                     <a class="level-top" href="{{route('shop')}}"><span>{{__('home.shops')}}</span></a>
                 </li>
@@ -35,24 +35,21 @@
                     <a class="level-top" href="{{route('restaurant')}}"><span>{{__('home.resturants')}}</span></a>
                 </li>
 
-                <li class="drop-menu"><a href="{{route('kids')}}" class="level-top "><span>{{__('home.kids')}}</span></a>
-                    
+                <li class="drop-menu">
+                    <a href="{{route('kids')}}" class="level-top "><span>{{__('home.kids')}}</span></a>
                 </li>
                 <li class="mega-menu">
-                    <a class="level-top" href="giftcards.html"><span>{{__('home.media')}}</span></a>
+                    <a class="level-top" href="{{route('media')}}"><span>{{__('home.media')}}</span></a>
                 </li>
                 <li class="mega-menu">
                     <a class="level-top" href="offer.html"><span>{{__('home.offers')}}</span></a>
                 </li>
-                <li class="mega-menu"> <a class="level-top" href="services.html"><span>{{__('home.services')}}</span></a>
-                 
+                <li class="mega-menu">
+                     <a class="level-top" href="{{route('services')}}"><span>{{__('home.services')}}</span></a>
                 </li>
                 <li class="mega-menu">
-                    <a class="level-top" href="photos.html"><span>{{__('home.photos')}}</span></a>
+                    <a class="level-top" href="{{route('photos')}}"><span>{{__('home.photos')}}</span></a>
                 </li>
-
-
-
 
                 <li class="drop-menu"><a href="#" class="level-top "><span>{{__('home.Contact Us')}}</span></a>
 

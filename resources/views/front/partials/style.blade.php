@@ -12,3 +12,5 @@
  <link rel="stylesheet" href="{{asset('front/css/owl.carousel.css')}}">
  <link rel="stylesheet" href="{{asset('front/css/owl.theme.default.min.css')}}">
  <!-- End owl carosel --->
+
+  

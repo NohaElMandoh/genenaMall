@@ -27,9 +27,12 @@ Route::get('/entertainment', [App\Http\Controllers\HomeController::class, 'enter
 Route::get('/shop', [App\Http\Controllers\HomeController::class, 'shop'])->name('shop');
 Route::get('/restaurant', [App\Http\Controllers\HomeController::class, 'restaurant'])->name('restaurant');
 Route::get('/kids', [App\Http\Controllers\HomeController::class, 'emoje'])->name('kids');
+Route::get('/services', [App\Http\Controllers\HomeController::class, 'services'])->name('services');
+Route::get('/photos', [App\Http\Controllers\HomeController::class, 'photos'])->name('photos');
+Route::get('/media', [App\Http\Controllers\HomeController::class, 'media'])->name('media');
+Route::get('/qs_details/{id}', [App\Http\Controllers\HomeController::class, 'qs_details'])->name('qs_details');
 
-
-Route::get('/items', [App\Http\Controllers\HomeController::class, 'items'])->name('items');
+Route::get('/items/{id}', [App\Http\Controllers\HomeController::class, 'items'])->name('items');
 
 
 });

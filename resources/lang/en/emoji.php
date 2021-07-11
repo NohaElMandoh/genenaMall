@@ -9,6 +9,7 @@ return [
     'HOURS' => 'HOURS',
     'What is EMOJI?'=>'What is EMOJI?',
     'Why parents'=>'Why parents',
-    'can be calm?'=>'can be calm?'
+    'can be calm?'=>'can be calm?',
+    'PHOTO GALLERY'=>'PHOTO GALLERY'
 
 ];

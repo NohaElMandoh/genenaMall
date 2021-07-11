@@ -1,5 +1,10 @@
 @extends('front.layouts.app')
+@section('style')
 
+
+
+    <link href="{{asset('front/plugins/lightgallary/dist/css/lightgallery.css')}}" rel="stylesheet">
+@endsection
 @section('content')
 
 
@@ -10,53 +15,10 @@
  @include('front.partials.emoje.children')
 
  @include('front.partials.emoje.feature')
+ @include('front.partials.emoje.photogallary')
 
 
-    <div class="Photogallary">
-        <div class="container">
-            <div class="title">
-                <h1>PHOTO GALLERY</h1>
-            </div>
-            <div class="photoGallContent">
-                <div class="demo-gallery">
-                    <ul id="lightgallery" class="list-unstyled row">
-                        <li class="col-xs-12 col-sm-4 col-md-3" data-src="images/slider/u0a494_1-1.png" data-sub-html="
-                                   <h4>Fading Light</h4>
-                                   <p>Classic view from Rigwood Jetty on Coniston Water an old archive shot similar to an old post but a little later on.</p>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
-                            <a href="">
-                                <img class="img-responsive" src="images/slider/u0a494_1-1.png" alt="Thumb-1">
-                            </a>
-
-                        </li>
-                        <li class="col-xs-6 col-sm-4 col-md-3" data-src="images/slider/u2a5412-1.png" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>"
-                            data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
-                            <a href="">
-                                <img class="img-responsive" src="images/slider/u2a5412-1.png" alt="Thumb-2">
-                            </a>
-                        </li>
-                        <li class="col-xs-6 col-sm-4 col-md-3" data-src="images/slider/u3a5667.png" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>"
-                            data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
-                            <a href="">
-                                <img class="img-responsive" src="images/slider/u3a5667.png" alt="Thumb-3">
-                            </a>
-                        </li>
-                        <li class="col-xs-6 col-sm-4 col-md-3" data-src="images/slider/u4.png" data-sub-html="<h4>Bowness Bay</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy I was passing the right place at the right time....</p>"
-                            data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
-                            <a href="">
-                                <img class="img-responsive" src="images/slider/u4.png" alt="Thumb-4">
-                            </a>
-                        </li>
-                    </ul>
-
-                    <div class="showallimg">
-                        <a href="photos.html" class="AllImg">Show all Imges</a>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
+    
 
     <div class="npmImges">
         <div class="container">
@@ -65,76 +27,27 @@
                     <h1>при поддержке</h1>
                 </div>
                 <div class="imagesmain">
-                    <img src="images/slider/zamania.svg">
+                    <img src="{{asset('front/images/slider/zamania.svg')}}">
                 </div>
 
 
                 <div class="row">
+                    @if(!empty($partners))
+                    @foreach($partners as $partner) 
                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
                         <div class="imgeiteim">
 
-                            <img src="images/slider/karo_red.png">
+                            <img src="{{voyager::image($partner->image)}}">
 
 
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <div class="imgeiteim">
-                            <img src="images/slider/panda-park.svg">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <div class="imgeiteim">
-                            <img src="images/slider/mirror.png">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <div class="imgeiteim">
-                            <img src="images/slider/goal.svg">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <div class="imgeiteim">
-                            <img src="images/slider/megaice.svg">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <div class="imgeiteim">
-                            <img src="images/slider/claustro.svg">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <div class="imgeiteim">
-                            <img src="images/slider/rec-park.png">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <div class="imgeiteim">
-                            <img src="images/slider/icanfly.png">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <div class="imgeiteim">
-                            <img src="images/slider/motor.png">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <div class="imgeiteim">
-                            <img src="images/slider/play-vr.png">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <div class="imgeiteim">
-                            <img src="images/slider/kidzania-new.png">
-                        </div>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-6">
-                        <div class="imgeiteim">
-                            <img src="images/slider/slime-lab.png">
-                        </div>
-                    </div>
-
-
+                    @endforeach
+                    @endif
+                  
+                 
+               
+                   
 
                 </div>
             </div>
@@ -163,7 +76,7 @@
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="howmuchcall">
                             <a class="clllink" href="#"><span>
-                        <img src="images/slider/phone_gray.svg"> </span> {{$camp->phone}}</a>
+                        <img src="{{asset('front/images/slider/phone_gray.svg')}}"> </span> {{$camp->phone}}</a>
 
                         </div>
                     </div>
@@ -174,7 +87,6 @@
 
 
 </div>
-
 
 
 

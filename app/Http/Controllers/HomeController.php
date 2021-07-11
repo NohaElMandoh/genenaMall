@@ -6,9 +6,14 @@ use App\Models\Camp;
 use App\Models\Department;
 use App\Models\Emoje;
 use App\Models\Entertainment;
+use App\Models\Galary;
+use App\Models\Item;
+use App\Models\MediaStep;
 use App\Models\Newsletter;
+use App\Models\Partner;
 use App\Models\Qa;
 use App\Models\Restaurant;
+use App\Models\Service;
 use App\Models\Shop;
 use App\Models\Slider;
 use App\Models\Unit;
@@ -65,13 +70,43 @@ class HomeController extends Controller
         $camp=Camp::first();
         $why_qas=Qa::where('section','why-emoji')->get();
         $what_qas=Qa::where('section','what-emoji')->get();
-
-        return view('front.kids',compact('emoje','camp','why_qas','what_qas'));
+        $gallary=Galary::get();
+        $partners=Partner::get();
+        
+        return view('front.kids',compact('emoje','camp','why_qas','what_qas','gallary','partners'));
     }
-    public function items()
+    public function media()
     {
-     
-        return view('front.items');
+        $what_qas=Qa::where('section','media-ques')->get();
+        $steps=MediaStep::orderBy('step','asc')->get();
+        return view('front.media',compact('what_qas','steps'));
+    }
+    public function services()
+    {
+        $services=Service::get();
+        return view('front.services',compact('services'));
+    }
+    public function qs_details($qs_id)
+    {
+        if (!empty($qs_id)) {
+            
+            $what_qas=Qa::where('id',$qs_id)->first();
+        
+            return response()->json(['success' => true, 'result' => $what_qas]);
+        }
+        return response()->json(['success' => false, 'errors' => [0 => 'Not Found Data']]);
+
+    }
+    public function items($id)
+    {
+
+     $items=Item::where('unit_id',$id);
+        return view('front.items',compact('items'));
+    }
+    public function photos()
+    {
+     $photos=Galary::get();
+        return view('front.photos',compact('photos'));
     }
     public function newsLetter(Request $request)
     {

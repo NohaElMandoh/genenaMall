@@ -30,7 +30,7 @@
                         </div>
                         <div class="shopefront">
                             
-                                <a href="{{route('items')}}" class="linkgo">{{__('home.Go to')}}</a>
+                                <a href="{{route('items',$unit->id)}}" class="linkgo">{{__('home.Go to')}}</a>
                         
                         </div>
                        
