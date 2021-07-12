@@ -73,7 +73,7 @@
                 <div class="Boxessser">
                     <div class="row otherowww">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 othercool">
-                            <a href="shops.html" class="boxItem boxone">
+                            <a href="{{route('shop')}}" class="boxItem boxone">
                                 <div class="details">
                                     <h2 class="Numb">{{$shops_count}}</h2>
                                     <p class="name"> {{__('home.shops')}} </p>
@@ -82,7 +82,7 @@
                             </a>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 othercool">
-                            <a href="shops.html" class="boxItem boxtwo">
+                            <a href="{{route('restaurant')}}" class="boxItem boxtwo">
                                 <div class="details">
                                     <h2 class="Numb">{{$restaurants_count}}</h2>
                                     <p class="name"> {{__('home.resturants')}} </p>
@@ -91,7 +91,7 @@
                             </a>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 othercool">
-                            <a href="entertainment.html" class="boxItem boxthree">
+                            <a href="{{route('entertainment')}}" class="boxItem boxthree">
                                 <div class="details">
                                     <h2 class="Numb">{{$entertainments_count}}</h2>
                                     <p class="name"> {{__('home.Entertainment spots')}} </p>
@@ -100,7 +100,7 @@
                             </a>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 othercool">
-                            <a href="services.html" class="boxItem boxfoure">
+                            <a href="{{route('services')}}" class="boxItem boxfoure">
                                 <div class="details">
                                     <h2 class="Numb">{{$services_count}}</h2>
                                     <p class="name"> {{__('home.services')}} </p>
@@ -109,7 +109,7 @@
                             </a>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 othercool">
-                            <a href="offer.html" class="boxItem boxfife">
+                            <a href="{{route('offer')}}" class="boxItem boxfife">
                                 <div class="details">
                                     <h2 class="Numb">{{$offers_count}}</h2>
                                     <p class="name"> {{__('home.offers')}} </p>
@@ -118,7 +118,7 @@
                             </a>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 othercool">
-                            <a href="emojy.html" class="boxItem boxsix">
+                            <a href="{{route('kids')}}" class="boxItem boxsix">
                                 <div class="details">
                                     <h2 class="Numb">{{$offers_count}}</h2>
                                     <p class="name"> {{__('home.kids')}} </p>
