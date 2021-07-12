@@ -10,6 +10,9 @@ return [
     'What is EMOJI?'=>'What is EMOJI?',
     'Why parents'=>'Why parents',
     'can be calm?'=>'can be calm?',
-    'PHOTO GALLERY'=>'PHOTO GALLERY'
+    'PHOTO GALLERY'=>'PHOTO GALLERY',
+    'day'=>'day',
+    'days'=>'days',
+    'How much does it cost to attend the camp?'=>'How much does it cost to attend the camp?'
 
 ];
