@@ -9,8 +9,12 @@ class Category extends Model
 {
     use HasFactory;
     
-    public function items()
+    public function units()
     {
         return $this->hasMany('App\Models\UnitCategory');
+    }
+    public function items()
+    {
+        return $this->hasMany('App\Models\Item');
     }
 }
