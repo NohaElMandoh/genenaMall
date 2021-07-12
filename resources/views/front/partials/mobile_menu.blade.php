@@ -13,11 +13,11 @@
                 </form>
             </div>
         </li>
-        <li><a href="index.html">Home</a>
+        <li><a href="{{route('home')}}">{{__('home.Home')}}</a>
 
         </li>
-        <li><a href="entertainment.html">Entertainment</a>
-            <ul>
+        <li><a href="{{route('entertainment')}}">{{__('home.Entertainment')}}</a>
+            <ul style="display: none">
                 <li><a href="#"><span>Shop Grid</span></a>
                     <ul>
                         <li> <a href="#"> <span>Shop Grid Right Sidebar</span> </a> </li>
@@ -38,8 +38,8 @@
                 <li><a href="#"><span>404 Error Page</span></a> </li>
             </ul>
         </li>
-        <li><a href="shops.html">shops</a>
-            <ul>
+        <li><a href="{{route('shop')}}">{{__('home.shops')}}</a>
+            <ul style="display: none">
                 <li> <a href="#"><span>tassel saddle bag</span></a>
                     <ul>
                         <li> <a href="#"><span>Toaster Crossbody</span></a> </li>
@@ -90,8 +90,8 @@
                 </li>
             </ul>
         </li>
-        <li><a href="shops.html">resturants</a>
-            <ul>
+        <li><a href="{{route('restaurant')}}">{{__('home.resturants')}}</a>
+            <ul style="display: none">
                 <li> <a href="#"><span>Steve Madden</span></a>
                     <ul>
                         <li> <a href="#"><span>Elegant </span></a> </li>
@@ -142,16 +142,16 @@
                 </li>
             </ul>
         </li>
-        <li><a href="emojy.html">kids</a> </li>
-        <li><a href="giftcards.html">media</a> </li>
-        <li><a href="services.html">services</a> </li>
-        <li><a href="offer.html">offer</a>
-        <li><a href="photos.html">photos</a>
+        <li><a href="{{route('kids')}}">{{__('home.kids')}}</a> </li>
+        <li><a href="{{route('media')}}">{{__('home.media')}}</a> </li>
+        <li><a href="{{route('services')}}">{{__('home.services')}}</a> </li>
+        <li><a href="{{route('offer')}}">{{__('home.offers')}}</a>
+        <li><a href="{{route('photos')}}">{{__('home.photos')}}</a>
 
         </li>
-        <li><a href="#">Contact Us</a> </li>
+        <li><a href="#">{{__('home.Contact Us')}}</a> </li>
     </ul>
-    <div class="jtv-top-link-mob">
+    <div class="jtv-top-link-mob" style="display: none">
         <ul class="links">
             <li><a title="My Account" href="#">My Account</a> </li>
             <li><a title="Wishlist" href="#">Wishlist</a> </li>
