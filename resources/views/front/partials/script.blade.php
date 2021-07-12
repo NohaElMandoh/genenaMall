@@ -105,7 +105,7 @@
 
     <!----- Start owl carosel --->
     <!--        <script src="js/jquery.min.js"></script>-->
-    <script src="js/owl.carousel.min.js"></script>
+    <script src="{{asset('front/js/owl.carousel.min.js')}}"></script>
     <!----- Ebd owl carosel --->
 
     <script>
