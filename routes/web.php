@@ -31,6 +31,15 @@ Route::get('/services', [App\Http\Controllers\HomeController::class, 'services']
 Route::get('/photos', [App\Http\Controllers\HomeController::class, 'photos'])->name('photos');
 Route::get('/media', [App\Http\Controllers\HomeController::class, 'media'])->name('media');
 Route::get('/qs_details/{id}', [App\Http\Controllers\HomeController::class, 'qs_details'])->name('qs_details');
+Route::get('/item_details/{id}', [App\Http\Controllers\HomeController::class, 'item_details'])->name('item_details');
+Route::get('/item_service_details/{id}', [App\Http\Controllers\HomeController::class, 'item_service_details'])->name('item_service_details');
+Route::get('/itemsByCategory/{cat_id}/{unit_id}', [App\Http\Controllers\HomeController::class, 'itemsByCategory'])->name('itemsByCategory');
+
+
+
+Route::get('/offer', [App\Http\Controllers\HomeController::class, 'offers'])->name('offer');
+Route::get('/items_service/{id}', [App\Http\Controllers\HomeController::class, 'items_service'])->name('items_service');
+
 
 Route::get('/items/{id}', [App\Http\Controllers\HomeController::class, 'items'])->name('items');
 

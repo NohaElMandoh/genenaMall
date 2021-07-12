@@ -5,12 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Item extends Model
+class Offer extends Model
 {
     use HasFactory;
-
-    public function offers()
-    {
-        return $this->hasMany('App\Models\Offer');
-    }
+  
 }

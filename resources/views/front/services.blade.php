@@ -10,7 +10,7 @@
                 @foreach($services as $service)
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="servicepageItem">
-                       <a href="offer.html" class="linkserv">
+                       <a href="{{route('items_service',$service->id)}}" class="linkserv">
                             <span class="sricon">
                               {!!$service->image!!}
                             </span>

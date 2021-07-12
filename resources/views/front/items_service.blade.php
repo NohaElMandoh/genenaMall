@@ -65,7 +65,7 @@
                                                         </path>
                                                     </svg>
                                                 </div>
-                                                <p class="titletap">{{ __('item.Categories') }}</p>
+                                                <p class="titletap">{{ __('item.Services') }}</p>
                                             </a>
                                         </div>
                                     </div>
@@ -74,17 +74,14 @@
 
                             <div class="listlinkssear">
                                 <ul>
-                                    @if (!empty($categories))
-                                        @foreach ($categories as $category)
-                                        @if(!empty($unit_id))
+                                    @if (!empty($services))
+                                    <li>
+                                        <a href="{{route('items_service',0)}}">All<span class="numn">45</span></a>
+                                    </li>
+                                        @foreach ($services as $service)
                                             <li>
-                                                <a href="{{route('itemsByCategory',[$category->id,$unit_id])}}">{{ $category->name_en }} <span class="numn">{{ $category->items->count() }}</span></a>
+                                                <a href="{{route('items_service',$service->id)}}">{{ $service->title_en }} <span class="numn">{{ $service->items->count() }}</span></a>
                                             </li>
-                                            @else
-                                            <li>
-                                                <a href="{{route('itemsByCategory',[$category->id,0])}}">{{ $category->name_en }} <span class="numn">{{ $category->items->count() }}</span></a>
-                                            </li>
-                                            @endif
                                         @endforeach
                                     @endif
                                 </ul>
@@ -95,26 +92,27 @@
                     <div class="col-lg-9 col-md-8 col-sm-8 col-xs-12">
                         <div class="offerpagesoff ">
                             <div class="row">
-                                @if (!empty($items))
-                                    @foreach ($items as $item)
+                                @if (!empty($items_services))
+                                    @foreach ($items_services as $item)
                                         <input type="hidden" id="item_image" name="item_image"
                                             value="{{ voyager::image($item->image) }}">
                                         <input type="hidden" id="item_long_image" name="item_long_image"
                                             value="{{ voyager::image($item->banar_image) }}">
                                         <input type="hidden" id="item_id" name="item_id" value="{{ $item->id }}">
+
                                         <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
                                             <button class="off_content" id='model1' data-id="{{ $item->id }}">
                                                 <div class="image">
                                                     <img src="{{ voyager::image($item->image) }}" alt="photos">
                                                 </div>
                                                 <div class="content">
-                                                      <h2 class="New "> @if(count($item->offers) > 0)   offer @else New @endif  </h2> 
+                                                      {{-- <h2 class="New ">  offer </h2>  --}}
                                   
                                     <h1 class="Name">{{ $item->title_en }}</h1>
                                     <p class="lead">{{ $item->short_desc_en }}</p>
-                                    <div class="more">
+                                    {{-- <div class="more">
                                         <a><span>from 24 Jul 2020 </span></a>
-                                    </div>
+                                    </div> --}}
                             </div>
                             </button>
 
@@ -199,7 +197,7 @@
                                     d="M18 14a4 4 0 00-3.325 1.778l-4.902-2.45a3.981 3.981 0 000-2.656l4.902-2.45A4 4 0 0018 10c2.206 0 4-1.794 4-4s-1.794-4-4-4a4.005 4.005 0 00-3.773 5.327L9.325 9.778A4 4 0 006 8c-2.206 0-4 1.794-4 4s1.794 4 4 4a4 4 0 003.325-1.778l4.902 2.45A4.005 4.005 0 0018 22c2.206 0 4-1.794 4-4s-1.794-4-4-4zm0-11c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zM6 15c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3zm12 6c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3z">
                                 </path>
                             </svg></a>
-                      
+                        Offer
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"
@@ -217,7 +215,7 @@
                         </div>
                         <div class="categoryimg">
                             <div class="imagcat">
-                                <img id='model2_image' src="{{ asset('front/images/slider/5_karmanov.png') }}">
+                                <img id='model2_image'src="{{ asset('front/images/slider/5_karmanov.png') }}">
                             </div>
                             <p class="cattiltle">Category title</p>
                         </div>
@@ -248,29 +246,28 @@
             $('.offer_box').hide();
             var offer;
             $.ajax({
-                url: base_url + '/item_details/' + item_id,
+                url: base_url + '/item_service_details/' + item_id,
                 type: 'GET',
 
                 success: function(data) {
                     if (data.success == true) {
 
                         $('#modal_title').text(data.result.title_en);
-                        $('.cattiltle').text(data.result.title_en);
 
-                        
-                        $('#mid_desc').html(data.result.mid_desc_en);
+                        $('#mid_desc').html(data.result.desc_en);
                         $('#long_desc').html(data.result.long_desc_en);
-
-                        if (data.offer != 0) {
+                        $('.cattiltle').text(data.result.title_en);
+                        // if (data.offer != 0) {
                            
-                            $('.mod_title').html('offer/' + data.result.title_en);
-                            $('.offer_box').html('offer');
-                            $('.offer_box').show();
-                        } else
+                        //     $('.mod_title').html('offer/' + data.result.title_en);
+                        //     $('.offer_box').html('offer');
+                        //     $('.offer_box').show();
+                        // } else
                             $('.mod_title').html(data.result.title_en);
                         $("#main_image").attr('src', x);
-                        $("#bannar_image").attr('src', y);
                         $("#model2_image").attr('src', x);
+                        $("#bannar_image").attr('src', y);
+                        
 
                         $('#exampleModal').modal('show');
 

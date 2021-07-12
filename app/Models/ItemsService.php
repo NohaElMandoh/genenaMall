@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Item extends Model
+class ItemsService extends Model
 {
     use HasFactory;
-
-    public function offers()
+    protected $table='items_services';
+    public function service()
     {
-        return $this->hasMany('App\Models\Offer');
+        return $this->belongsTo('App\Models\Service');
     }
 }

@@ -75,7 +75,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 othercool">
                             <a href="shops.html" class="boxItem boxone">
                                 <div class="details">
-                                    <h2 class="Numb">416</h2>
+                                    <h2 class="Numb">{{$shops_count}}</h2>
                                     <p class="name"> {{__('home.shops')}} </p>
                                 </div>
                               @include('front.partials.icons')
@@ -84,7 +84,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 othercool">
                             <a href="shops.html" class="boxItem boxtwo">
                                 <div class="details">
-                                    <h2 class="Numb">78</h2>
+                                    <h2 class="Numb">{{$restaurants_count}}</h2>
                                     <p class="name"> {{__('home.resturants')}} </p>
                                 </div>
                                 @include('front.partials.icons')
@@ -93,7 +93,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 othercool">
                             <a href="entertainment.html" class="boxItem boxthree">
                                 <div class="details">
-                                    <h2 class="Numb">27</h2>
+                                    <h2 class="Numb">{{$entertainments_count}}</h2>
                                     <p class="name"> {{__('home.Entertainment spots')}} </p>
                                 </div>
                                 @include('front.partials.icons')
@@ -102,7 +102,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 othercool">
                             <a href="services.html" class="boxItem boxfoure">
                                 <div class="details">
-                                    <h2 class="Numb">77</h2>
+                                    <h2 class="Numb">{{$services_count}}</h2>
                                     <p class="name"> {{__('home.services')}} </p>
                                 </div>
                                 @include('front.partials.icons')
@@ -111,7 +111,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 othercool">
                             <a href="offer.html" class="boxItem boxfife">
                                 <div class="details">
-                                    <h2 class="Numb">15</h2>
+                                    <h2 class="Numb">{{$offers_count}}</h2>
                                     <p class="name"> {{__('home.offers')}} </p>
                                 </div>
                                 @include('front.partials.offer-icons')
@@ -120,7 +120,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 othercool">
                             <a href="emojy.html" class="boxItem boxsix">
                                 <div class="details">
-                                    <h2 class="Numb">35</h2>
+                                    <h2 class="Numb">{{$offers_count}}</h2>
                                     <p class="name"> {{__('home.kids')}} </p>
                                 </div>
                                 @include('front.partials.icons')

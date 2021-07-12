@@ -42,7 +42,7 @@
                     <a class="level-top" href="{{route('media')}}"><span>{{__('home.media')}}</span></a>
                 </li>
                 <li class="mega-menu">
-                    <a class="level-top" href="offer.html"><span>{{__('home.offers')}}</span></a>
+                    <a class="level-top" href="{{route('offer')}}"><span>{{__('home.offers')}}</span></a>
                 </li>
                 <li class="mega-menu">
                      <a class="level-top" href="{{route('services')}}"><span>{{__('home.services')}}</span></a>

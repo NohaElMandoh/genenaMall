@@ -28,6 +28,14 @@
                             <span>10:00 - 22:00</span><br><br>
                             <span>Fri - Sat</span><br>
                             <span>10:00 - 23:00</span><br>
+                           {{-- <span>@if(!empty($workdays)) 
+                                @foreach($workdays as $day)
+
+                                <span>{{$day->day}}</span><br>
+                                <span> {{$day->from}} - {{$day->to}}</span><br><br>
+                               
+                                @endforeach
+                                @endif</span><br>--}}
                         </div>
                     </div>
                 </div>
