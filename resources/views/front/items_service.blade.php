@@ -73,12 +73,20 @@
                             </div>
 
                             <div class="listlinkssear">
+                                @php
+                                 $count=0;   
+                                @endphp
                                 <ul>
                                     @if (!empty($services))
+                                    @foreach ($services as $service)
+                                    @php
+                                     $count +=   $service->items->count();
+                                    @endphp
+                                    @endforeach
                                     <li>
-                                        <a href="{{route('items_service',0)}}">All<span class="numn">45</span></a>
+                                        <a href="{{route('items_service',0)}}">{{__('item.All')}}<span class="numn">{{$count}}</span></a>
                                     </li>
-                                        @foreach ($services as $service)
+                                    @foreach ($services as $service)
                                             <li>
                                                 <a href="{{route('items_service',$service->id)}}">{{ $service->title_en }} <span class="numn">{{ $service->items->count() }}</span></a>
                                             </li>

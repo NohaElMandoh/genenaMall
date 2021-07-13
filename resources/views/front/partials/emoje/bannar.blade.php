@@ -11,7 +11,7 @@
                                 <h2>{{$emoje->sub_title_en}}</h2>
                             </div>
                             <div class="paragraphs">
-                                <p>{{__('Closest dates')}}</p>
+                                <p>{{__('home.Closest dates')}}</p>
                                 <p>May 31 - August 27</p>
                             </div>
                             <div class="linkss">

@@ -176,6 +176,7 @@ class HomeController extends Controller
     {
 
         $items = Item::where('category_id', $cat_id)->get();
+     
         return view('front.items', compact('items', 'unit_id'));
     }
     public function photos()

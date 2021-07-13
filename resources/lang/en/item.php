@@ -6,7 +6,8 @@ return [
     'Categories'=>'Categories',
     'to shop'=>'to shop',
     'Applay'=>'Applay',
-    'Services'=>'Services'
+    'Services'=>'Services',
+    'All'=>'All'
 
     
 
