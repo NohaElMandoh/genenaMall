@@ -75,8 +75,10 @@
                             <div class="listlinkssear">
                                 @php
                                  $count=0;
+                                 $unit_id=0;
                                  foreach ($categories as $category)  {
                                      foreach($category->items as $item){
+                                         if($unit_id )  $unit_id=$unit_id;
                                      if($item->unit_id == $unit_id)  $count+=1;
                                      }
                                  }
@@ -84,7 +86,7 @@
                                 @endphp
                                 <ul>
                                     <li>
-                                        <a href="{{route('items',$unit_id)}}">{{__('item.All')}}<span class="numn">{{$count}}</span></a>
+                                        <a href="{{route('items', $unit_id ?? '' )}}">{{__('item.All')}}<span class="numn">{{$count}}</span></a>
                                     </li>
                                     @if (!empty($categories))
                                         @foreach ($categories as $category)

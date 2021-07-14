@@ -74,21 +74,23 @@
 
                             <div class="listlinkssear">
                                 @php
-                                 $count=0;   
+                                    $count = 0;
                                 @endphp
                                 <ul>
                                     @if (!empty($services))
-                                    @foreach ($services as $service)
-                                    @php
-                                     $count +=   $service->items->count();
-                                    @endphp
-                                    @endforeach
-                                    <li>
-                                        <a href="{{route('items_service',0)}}">{{__('item.All')}}<span class="numn">{{$count}}</span></a>
-                                    </li>
-                                    @foreach ($services as $service)
+                                        @foreach ($services as $service)
+                                            @php
+                                                $count += $service->items->count();
+                                            @endphp
+                                        @endforeach
+                                        <li>
+                                            <a href="{{ route('items_service', 0) }}">{{ __('item.All') }}<span
+                                                    class="numn">{{ $count }}</span></a>
+                                        </li>
+                                        @foreach ($services as $service)
                                             <li>
-                                                <a href="{{route('items_service',$service->id)}}">{{ $service->title_en }} <span class="numn">{{ $service->items->count() }}</span></a>
+                                                <a href="{{ route('items_service', $service->id) }}">{{ $service->title_en }}
+                                                    <span class="numn">{{ $service->items->count() }}</span></a>
                                             </li>
                                         @endforeach
                                     @endif
@@ -114,29 +116,30 @@
                                                     <img src="{{ voyager::image($item->image) }}" alt="photos">
                                                 </div>
                                                 <div class="content">
-                                                      {{-- <h2 class="New ">  offer </h2>  --}}
-                                  
-                                    <h1 class="Name">{{ $item->title_en }}</h1>
-                                    <p class="lead">{{ $item->short_desc_en }}</p>
-                                    {{-- <div class="more">
+                                                    {{-- <h2 class="New ">  offer </h2> --}}
+
+                                                    <h1 class="Name">{{ $item->title_en }}</h1>
+                                                    <p class="lead">{{ $item->short_desc_en }}</p>
+                                                    {{-- <div class="more">
                                         <a><span>from 24 Jul 2020 </span></a>
                                     </div> --}}
+                                                </div>
+                                            </button>
+
+                                        </div>
+                                    @endforeach
+                                @endif
                             </div>
-                            </button>
-
+                          
                         </div>
-                        @endforeach
-                        @endif
+
                     </div>
+
+
                 </div>
-
             </div>
-
-
         </div>
-    </div>
-    </div>
-
+        
     </div>
 
 
@@ -172,7 +175,7 @@
                             <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
                                 <div class="offdetbef">
                                     <div class="content">
-                                        <h2 class="New offer_box" > &nbsp;</h2>
+                                        <h2 class="New offer_box"> &nbsp;</h2>
                                         <h1 class="Name" id='model_title'></h1>
                                         <p class="lead" id='mid_desc'></p>
 
@@ -223,7 +226,7 @@
                         </div>
                         <div class="categoryimg">
                             <div class="imagcat">
-                                <img id='model2_image'src="{{ asset('front/images/slider/5_karmanov.png') }}">
+                                <img id='model2_image' src="{{ asset('front/images/slider/5_karmanov.png') }}">
                             </div>
                             <p class="cattiltle">Category title</p>
                         </div>
@@ -266,16 +269,16 @@
                         $('#long_desc').html(data.result.long_desc_en);
                         $('.cattiltle').text(data.result.title_en);
                         // if (data.offer != 0) {
-                           
+
                         //     $('.mod_title').html('offer/' + data.result.title_en);
                         //     $('.offer_box').html('offer');
                         //     $('.offer_box').show();
                         // } else
-                            $('.mod_title').html(data.result.title_en);
+                        $('.mod_title').html(data.result.title_en);
                         $("#main_image").attr('src', x);
                         $("#model2_image").attr('src', x);
                         $("#bannar_image").attr('src', y);
-                        
+
 
                         $('#exampleModal').modal('show');
 

@@ -120,8 +120,8 @@ class HomeController extends Controller
     public function items_service($id = null)
     {
         if (!empty($id))
-            $items_services = ItemsService::where('service_id', $id)->get();
-        else  $items_services = ItemsService::get();
+            $items_services = ItemsService::where('service_id', $id)->paginate(15);
+        else  $items_services = ItemsService::paginate(15);
         return view('front.items_service', compact('items_services'));
     }
     // 
