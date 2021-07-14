@@ -175,7 +175,7 @@ class HomeController extends Controller
     public function itemsByCategory($cat_id, $unit_id)
     {
 
-        $items = Item::where('category_id', $cat_id)->get();
+        $items = Item::where('category_id', $cat_id)->where('unit_id',$unit_id)->get();
      
         return view('front.items', compact('items', 'unit_id'));
     }
