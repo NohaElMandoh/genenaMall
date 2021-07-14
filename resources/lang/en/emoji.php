@@ -13,6 +13,7 @@ return [
     'PHOTO GALLERY'=>'PHOTO GALLERY',
     'day'=>'day',
     'days'=>'days',
-    'How much does it cost to attend the camp?'=>'How much does it cost to attend the camp?'
+    'How much does it cost to attend the camp?'=>'How much does it cost to attend the camp?',
+    'Show all Imges'=>'Show all Imges'
 
 ];

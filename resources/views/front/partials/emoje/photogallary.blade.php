@@ -38,7 +38,7 @@
                 </ul>
 
                 <div class="showallimg">
-                    <a href="photos.html" class="AllImg">Show all Imges</a>
+                    <a href="{{route('photos')}}" class="AllImg">{{__('emoji.Show all Imges')}}</a>
                 </div>
             </div>
 
