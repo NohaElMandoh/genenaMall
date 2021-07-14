@@ -75,29 +75,30 @@
                             <div class="listlinkssear">
                                 @php
                                  $count=0;
-                                //  $unit_id=0;
+                                
                                  foreach ($categories as $category)  {
                                      foreach($category->items as $item){
-                                        //  if($unit_id )  $unit_id=$unit_id;
-                                     if($item->unit_id == $unit_id)  $count+=1;
+                                    foreach($item->offers  as $offer)
+                                    $count+=1;
                                      }
                                  }
                                  
                                 @endphp
                                 <ul>
                                     <li>
-                                        <a href="{{route('items', $unit_id ?? '' )}}">{{__('item.All')}}<span class="numn">{{$count}}</span></a>
+                                        <a href="{{route('offer')}}">{{__('item.All')}}<span class="numn">{{$count}}</span></a>
                                     </li>
                                     @if (!empty($categories))
                                         @foreach ($categories as $category)
-                                        @if(!empty($unit_id))
+                                       
                                             <li>
-                                                <a href="{{route('itemsByCategory',[$category->id,$unit_id])}}">{{ $category->name_en }} <span class="numn">
+                                                <a href="{{route('offersByCategory',[$category->id,0])}}">{{ $category->name_en }} <span class="numn">
                                                     @php
                                                     $count_items=0;
                                                     if (!empty($category->items))  {
                                                         foreach( $category->items as $item){
-                                                        if($item->unit_id == $unit_id)  $count_items+=1;
+                                                            foreach($item->offers  as $offer)
+                                   $count_items += 1;
                                                         }
                                                     }
                                                     
@@ -105,11 +106,8 @@
                                                     {{ $count_items}}
                                                 </span></a>
                                             </li>
-                                            @else
-                                            <li>
-                                                <a href="{{route('itemsByCategory',[$category->id,0])}}">{{ $category->name_en }} <span class="numn">{{ $category->items->count() }}</span></a>
-                                            </li>
-                                            @endif
+                                           
+                                        
                                         @endforeach
                                     @endif
                                 </ul>

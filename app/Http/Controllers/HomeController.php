@@ -129,7 +129,7 @@ class HomeController extends Controller
     {
         $items = Item::whereHas('offers')->get();
 
-        return view('front.items', compact('items'));
+        return view('front.items_offers', compact('items'));
     }
     public function qs_details($qs_id)
     {
@@ -178,6 +178,12 @@ class HomeController extends Controller
         $items = Item::where('category_id', $cat_id)->get();
      
         return view('front.items', compact('items', 'unit_id'));
+    }
+    public function offersByCategory($cat_id)
+    {
+        $items = Item::whereHas('offers')->where('category_id', $cat_id)->get();
+     
+        return view('front.items_offers', compact('items'));
     }
     public function photos()
     {

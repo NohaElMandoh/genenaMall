@@ -34,6 +34,7 @@ Route::get('/qs_details/{id}', [App\Http\Controllers\HomeController::class, 'qs_
 Route::get('/item_details/{id}', [App\Http\Controllers\HomeController::class, 'item_details'])->name('item_details');
 Route::get('/item_service_details/{id}', [App\Http\Controllers\HomeController::class, 'item_service_details'])->name('item_service_details');
 Route::get('/itemsByCategory/{cat_id}/{unit_id}', [App\Http\Controllers\HomeController::class, 'itemsByCategory'])->name('itemsByCategory');
+Route::get('/offersByCategory/{cat_id}', [App\Http\Controllers\HomeController::class, 'offersByCategory'])->name('offersByCategory');
 
 
 
