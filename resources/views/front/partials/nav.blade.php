@@ -34,7 +34,7 @@
 
                 <li class="mega-menu">
                     <a class="level-top {{ (Route::currentRouteName() == 'restaurant') ? 'active' : '' }} " href="{{route('restaurant')}}"><span>{{__('home.resturants')}}</span></a>
-                </li>/
+                </li>
 
                 <li class="drop-menu">
                     <a href="{{route('kids')}}" class="level-top  {{ (Route::currentRouteName()== 'kids' ) ? 'active' : '' }}"><span>{{__('home.kids')}}</span></a>
