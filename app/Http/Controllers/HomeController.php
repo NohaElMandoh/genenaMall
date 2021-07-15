@@ -51,31 +51,39 @@ class HomeController extends Controller
 
         $department = Department::where('slug', 'shop')->first();
         $shops = Unit::where('department_id', $department->id)->get();
-        $shops_count= $shops->count();
+        $shops_count = $shops->count();
 
         $department = Department::where('slug', 'entertainment')->first();
         $entertainments = Unit::where('department_id', $department->id)->latest()->get();
-        $entertainments_count=$entertainments->count();
+        $entertainments_count = $entertainments->count();
 
 
         $department = Department::where('slug', 'restaurant')->first();
         $restaurants = Unit::where('department_id', $department->id)->latest()->get();
-        $restaurants_count=$restaurants->count();
+        $restaurants_count = $restaurants->count();
 
-        $services=Service::get();
-        $services_count=$services->count();
+        $services = Service::get();
+        $services_count = $services->count();
 
-        $offers=Offer::get();
-        $offers_count=$offers->count();
+        $offers = Offer::get();
+        $offers_count = $offers->count();
 
-        $t=    Carbon::now();
-       strtoupper(substr($t->format('l'), 0, 3));
+        $t =    Carbon::now();
+        strtoupper(substr($t->format('l'), 0, 3));
 
 
 
-        return view('front.home', compact('sliders', 'icons', 'offerIcons', 'items','shops_count','entertainments_count','restaurants_count'
-    ,'services_count','offers_count'
-    ));
+        return view('front.home', compact(
+            'sliders',
+            'icons',
+            'offerIcons',
+            'items',
+            'shops_count',
+            'entertainments_count',
+            'restaurants_count',
+            'services_count',
+            'offers_count'
+        ));
     }
     public function entertainment()
     {
@@ -172,17 +180,37 @@ class HomeController extends Controller
         $items = Item::where('unit_id', $id)->get();
         return view('front.items', compact('items', 'unit_id'));
     }
+    public function search_items(Request $request)
+    {
+    
+
+        $unit_id = 0;
+        $items = Item::where('title_en', 'like', '%' . $request->name . '%')->get();  ///global search
+        if ($request->has('unit_id_search')) {   ///items search
+            $unit_id = $request->unit_id_search;
+            if ($request->has('type')) { //offer serch
+                if ($request->type == 'offer'){
+                   
+                    $items = Item::where('title_en', 'like', '%' . $request->name . '%')->whereHas('offers')->get();
+                    return view('front.offer', compact('items'));
+                }
+                else
+                    $items = Item::where('title_en', 'like', '%' . $request->name . '%')->where('unit_id', $request->unit_id_search)->get();
+            }
+        }
+
+        return view('front.items', compact('items', 'unit_id'));
+    }
     public function itemsByCategory($cat_id, $unit_id)
     {
+        $items = Item::where('category_id', $cat_id)->where('unit_id', $unit_id)->get();
 
-        $items = Item::where('category_id', $cat_id)->where('unit_id',$unit_id)->get();
-     
         return view('front.items', compact('items', 'unit_id'));
     }
     public function offersByCategory($cat_id)
     {
         $items = Item::whereHas('offers')->where('category_id', $cat_id)->get();
-     
+
         return view('front.items_offers', compact('items'));
     }
     public function photos()

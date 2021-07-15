@@ -60,7 +60,9 @@
 
                 <div class="modal-body modelSarch">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="search" autofocus autocomplete="">
+                        <form method="POST" action ="{{route('search_items')}}">
+                            @csrf
+                        <input type="text" id='name' name='name' class="form-control" placeholder="search" autofocus autocomplete="">
                         <button type="submit" class="btn btn_search">
                             <span>
                                 <svg width="42" height="42" viewBox="0 0 42 42" xmlns="http://www.w3.org/2000/svg">
@@ -70,6 +72,7 @@
                                 </svg>
                             </span>
                         </button>
+                        </form>
                     </div>
 
                 </div>

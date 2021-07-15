@@ -4,8 +4,12 @@
  <!-- CSS Style -->
 
 
-
+ @if ( Config::get('app.locale') == 'en')
  <link rel="stylesheet" href="{{asset('front/style.css')}}">
+@elseif ( Config::get('app.locale') == 'ar' )
+<link rel="stylesheet" href="{{asset('front/style.css')}}">
+@endif
+
 
 
  <!----- Start owl carosel --->

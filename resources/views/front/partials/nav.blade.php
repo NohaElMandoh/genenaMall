@@ -21,34 +21,35 @@
 
                 </li>
                 <li class="mega-menu"> 
-                    <a class="level-top active" href="{{route('home')}}"><span>{{__('home.Home')}} </span></a>
+                   
+                    <a class="level-top {{ (Route::currentRouteName()== 'home' ) ? 'active' : '' }} " href="{{route('home')}}"><span>{{__('home.Home')}} </span></a>
                 </li>
 
                 <li class="drop-menu">
-                     <a href="{{route('entertainment')}}"> <span>{{__('home.Entertainment')}}</span> </a></li>
+                     <a href="{{route('entertainment')}}" class="level-top {{ (Route::currentRouteName()== 'entertainment' ) ? 'active' : '' }} "> <span>{{__('home.Entertainment')}}</span> </a></li>
 
                 <li class="mega-menu">
-                    <a class="level-top" href="{{route('shop')}}"><span>{{__('home.shops')}}</span></a>
+                    <a class="level-top {{ (Route::currentRouteName()== 'shop' ) ? 'active' : '' }}  " href="{{route('shop')}}"><span>{{__('home.shops')}}</span></a>
                 </li>
 
                 <li class="mega-menu">
-                    <a class="level-top" href="{{route('restaurant')}}"><span>{{__('home.resturants')}}</span></a>
-                </li>
+                    <a class="level-top {{ (Route::currentRouteName() == 'restaurant') ? 'active' : '' }} " href="{{route('restaurant')}}"><span>{{__('home.resturants')}}</span></a>
+                </li>/
 
                 <li class="drop-menu">
-                    <a href="{{route('kids')}}" class="level-top "><span>{{__('home.kids')}}</span></a>
+                    <a href="{{route('kids')}}" class="level-top  {{ (Route::currentRouteName()== 'kids' ) ? 'active' : '' }}"><span>{{__('home.kids')}}</span></a>
                 </li>
                 <li class="mega-menu">
-                    <a class="level-top" href="{{route('media')}}"><span>{{__('home.media')}}</span></a>
+                    <a class="level-top  {{ (Route::currentRouteName()== 'media' ) ? 'active' : '' }}" href="{{route('media')}}"><span>{{__('home.media')}}</span></a>
                 </li>
                 <li class="mega-menu">
-                    <a class="level-top" href="{{route('offer')}}"><span>{{__('home.offers')}}</span></a>
+                    <a class="level-top  {{ (Route::currentRouteName()== 'offer' ) ? 'active' : '' }}" href="{{route('offer')}}"><span>{{__('home.offers')}}</span></a>
                 </li>
                 <li class="mega-menu">
-                     <a class="level-top" href="{{route('services')}}"><span>{{__('home.services')}}</span></a>
+                     <a class="level-top {{ (Route::currentRouteName()== 'services' ) ? 'active' : '' }}" href="{{route('services')}}"><span>{{__('home.services')}}</span></a>
                 </li>
                 <li class="mega-menu">
-                    <a class="level-top" href="{{route('photos')}}"><span>{{__('home.photos')}}</span></a>
+                    <a class="level-top {{ (Route::currentRouteName()== 'photos' ) ? 'active' : '' }}" href="{{route('photos')}}"><span>{{__('home.photos')}}</span></a>
                 </li>
 
                 <li class="drop-menu"><a href="#" class="level-top "><span>{{__('home.Contact Us')}}</span></a>

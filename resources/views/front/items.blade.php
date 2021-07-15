@@ -14,13 +14,19 @@
                     <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
                         <div class="leftbarfixed">
                             <div class="serach">
-                                <input type="text" class="form-control" placeholder="serch">
-                                <span class="iconn"><svg width="17" height="18" viewBox="0 0 48 50"
-                                        xmlns="http://www.w3.org/2000/svg" class="sc-fpPwup fnGzZo">
-                                        <path
-                                            d="M47.17 47.904l-14.858-16.21A18.612 18.612 0 0037.5 18.75c0-5.007-1.95-9.717-5.492-13.258A18.634 18.634 0 0018.75 0C13.743 0 9.033 1.95 5.492 5.492A18.634 18.634 0 000 18.75c0 5.007 1.95 9.717 5.492 13.258A18.634 18.634 0 0018.75 37.5c4.315 0 8.405-1.448 11.72-4.113l14.858 16.208c.247.27.582.405.922.405a1.25 1.25 0 00.923-2.093l-.003-.003zM2.497 18.75c0-8.96 7.29-16.25 16.25-16.25s16.25 7.29 16.25 16.25-7.29 16.25-16.25 16.25-16.25-7.29-16.25-16.25z"
-                                            fill="currentColor"></path>
-                                    </svg></span>
+                                <form method="POST" action="{{ route('search_items') }}">
+                                    @csrf
+                                    <input type="hidden" id='unit_id_search' name='unit_id_search' value='{{ $unit_id }}'>
+                                    <input type="text" id='name' name='name' class="form-control" placeholder="serch">
+                                    <button type="submit"> <span class="iconn"><svg width="17" height="18"
+                                                viewBox="0 0 48 50" xmlns="http://www.w3.org/2000/svg"
+                                                class="sc-fpPwup fnGzZo">
+                                                <path
+                                                    d="M47.17 47.904l-14.858-16.21A18.612 18.612 0 0037.5 18.75c0-5.007-1.95-9.717-5.492-13.258A18.634 18.634 0 0018.75 0C13.743 0 9.033 1.95 5.492 5.492A18.634 18.634 0 000 18.75c0 5.007 1.95 9.717 5.492 13.258A18.634 18.634 0 0018.75 37.5c4.315 0 8.405-1.448 11.72-4.113l14.858 16.208c.247.27.582.405.922.405a1.25 1.25 0 00.923-2.093l-.003-.003zM2.497 18.75c0-8.96 7.29-16.25 16.25-16.25s16.25 7.29 16.25 16.25-7.29 16.25-16.25 16.25-16.25-7.29-16.25-16.25z"
+                                                    fill="currentColor"></path>
+                                            </svg></span>
+                                    </button>
+                                </form>
                             </div>
                             <div class="tapsconten">
                                 <div class="row otherrow">
@@ -74,41 +80,48 @@
 
                             <div class="listlinkssear">
                                 @php
-                                 $count=0;
-                                //  $unit_id=0;
-                                 foreach ($categories as $category)  {
-                                     foreach($category->items as $item){
-                                        //  if($unit_id )  $unit_id=$unit_id;
-                                     if($item->unit_id == $unit_id)  $count+=1;
-                                     }
-                                 }
-                                 
+                                    $count = 0;
+                                    //  $unit_id=0;
+                                    foreach ($categories as $category) {
+                                        foreach ($category->items as $item) {
+                                            //  if($unit_id )  $unit_id=$unit_id;
+                                            if ($item->unit_id == $unit_id) {
+                                                $count += 1;
+                                            }
+                                        }
+                                    }
+                                    
                                 @endphp
                                 <ul>
                                     <li>
-                                        <a href="{{route('items', $unit_id ?? '' )}}">{{__('item.All')}}<span class="numn">{{$count}}</span></a>
+                                        <a href="{{ route('items', $unit_id ?? '') }}">{{ __('item.All') }}<span
+                                                class="numn">{{ $count }}</span></a>
                                     </li>
                                     @if (!empty($categories))
                                         @foreach ($categories as $category)
-                                        @if(!empty($unit_id))
-                                            <li>
-                                                <a href="{{route('itemsByCategory',[$category->id,$unit_id])}}">{{ $category->name_en }} <span class="numn">
-                                                    @php
-                                                    $count_items=0;
-                                                    if (!empty($category->items))  {
-                                                        foreach( $category->items as $item){
-                                                        if($item->unit_id == $unit_id)  $count_items+=1;
-                                                        }
-                                                    }
-                                                    
-                                                   @endphp
-                                                    {{ $count_items}}
-                                                </span></a>
-                                            </li>
+                                            @if (!empty($unit_id))
+                                                <li>
+                                                    <a href="{{ route('itemsByCategory', [$category->id, $unit_id]) }}">{{ $category->name_en }}
+                                                        <span class="numn">
+                                                            @php
+                                                                $count_items = 0;
+                                                                if (!empty($category->items)) {
+                                                                    foreach ($category->items as $item) {
+                                                                        if ($item->unit_id == $unit_id) {
+                                                                            $count_items += 1;
+                                                                        }
+                                                                    }
+                                                                }
+                                                                
+                                                            @endphp
+                                                            {{ $count_items }}
+                                                        </span></a>
+                                                </li>
                                             @else
-                                            <li>
-                                                <a href="{{route('itemsByCategory',[$category->id,0])}}">{{ $category->name_en }} <span class="numn">{{ $category->items->count() }}</span></a>
-                                            </li>
+                                                <li>
+                                                    <a href="{{ route('itemsByCategory', [$category->id, 0]) }}">{{ $category->name_en }}
+                                                        <span class="numn"></span></a>
+                                                </li>
                                             @endif
                                         @endforeach
                                     @endif
@@ -133,28 +146,31 @@
                                                     <img src="{{ voyager::image($item->image) }}" alt="photos">
                                                 </div>
                                                 <div class="content">
-                                                      <h2 class="New "> @if(count($item->offers) > 0)   offer @else New @endif  </h2> 
-                                  
-                                    <h1 class="Name">{{ $item->title_en }}</h1>
-                                    <p class="lead">{{ $item->short_desc_en }}</p>
-                                    <div class="more">
-                                        <a><span>from 24 Jul 2020 </span></a>
-                                    </div>
+                                                    <h2 class="New ">
+                                                        @if (count($item->offers) > 0)
+                                                        offer @else New @endif
+                                                    </h2>
+
+                                                    <h1 class="Name">{{ $item->title_en }}</h1>
+                                                    <p class="lead">{{ $item->short_desc_en }}</p>
+                                                    <div class="more">
+                                                        <a><span>from 24 Jul 2020 </span></a>
+                                                    </div>
+                                                </div>
+                                            </button>
+
+                                        </div>
+                                    @endforeach
+                                @endif
                             </div>
-                            </button>
-
                         </div>
-                        @endforeach
-                        @endif
+
                     </div>
+
+
                 </div>
-
             </div>
-
-
         </div>
-    </div>
-    </div>
 
     </div>
 
@@ -191,7 +207,7 @@
                             <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
                                 <div class="offdetbef">
                                     <div class="content">
-                                        <h2 class="New offer_box" > &nbsp;</h2>
+                                        <h2 class="New offer_box"> &nbsp;</h2>
                                         <h1 class="Name" id='model_title'></h1>
                                         <p class="lead" id='mid_desc'></p>
 
@@ -224,7 +240,7 @@
                                     d="M18 14a4 4 0 00-3.325 1.778l-4.902-2.45a3.981 3.981 0 000-2.656l4.902-2.45A4 4 0 0018 10c2.206 0 4-1.794 4-4s-1.794-4-4-4a4.005 4.005 0 00-3.773 5.327L9.325 9.778A4 4 0 006 8c-2.206 0-4 1.794-4 4s1.794 4 4 4a4 4 0 003.325-1.778l4.902 2.45A4.005 4.005 0 0018 22c2.206 0 4-1.794 4-4s-1.794-4-4-4zm0-11c1.654 0 3 1.346 3 3s-1.346 3-3 3-3-1.346-3-3 1.346-3 3-3zM6 15c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3zm12 6c-1.654 0-3-1.346-3-3s1.346-3 3-3 3 1.346 3 3-1.346 3-3 3z">
                                 </path>
                             </svg></a>
-                      
+
                     </h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true"><svg width="24" height="24" viewBox="0 0 24 24"
@@ -282,17 +298,20 @@
                         $('#modal_title').text(data.result.title_en);
                         $('.cattiltle').text(data.result.title_en);
 
-                        
+
                         $('#mid_desc').html(data.result.mid_desc_en);
                         $('#long_desc').html(data.result.long_desc_en);
 
                         if (data.offer != 0) {
-                           
+
                             $('.mod_title').html('offer/' + data.result.title_en);
                             $('.offer_box').html('offer');
                             $('.offer_box').show();
-                        } else
+                        } else {
                             $('.mod_title').html(data.result.title_en);
+                            $('.offer_box').html('new');
+                            $('.offer_box').show();
+                        }
                         $("#main_image").attr('src', x);
                         $("#bannar_image").attr('src', y);
                         $("#model2_image").attr('src', x);
