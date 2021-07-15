@@ -1,6 +1,8 @@
 /node_modules
 /public/hot
-
+public/front/css/bootstrap-rtl.css
+public/front/css/style-RTL.css
+resources/views/front/partials/style.blade.php
 /vendor
 .env
 .env.backup
