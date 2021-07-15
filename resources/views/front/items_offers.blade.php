@@ -61,7 +61,7 @@
                                     </div>
                                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 othercool">
                                         <div class="tapitem">
-                                            <a href="#" class="taplink">
+                                            <a href="{{route('services')}}" class="taplink">
                                                 <div class="icontap">
                                                     <svg width="16" height="16" viewBox="0 0 16 16"
                                                         xmlns="http://www.w3.org/2000/svg">
