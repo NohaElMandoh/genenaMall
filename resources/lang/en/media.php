@@ -7,6 +7,7 @@ return [
     'You can check the balance ' => 'You can check the balance ',
     'here' => 'here',
     'check blance'=>'check blance',
-    'top up cards'=>'top up cards'
+    'top up cards'=>'top up cards',
+    'What to do ?'=>'What to do ?'
 
 ];

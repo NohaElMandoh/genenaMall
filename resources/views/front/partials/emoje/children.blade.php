@@ -2,7 +2,7 @@
     <div class="container">
         <div class="emojychilderncontent">
             <div class="title">
-                <h2>{{__('home.EMOJI')}} <span>{{$camp->title_en}}</span> </h2>
+                <h2>{{__('home.EMOJI')}} <span>{{$camp->title}}</span> </h2>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">

@@ -7,8 +7,8 @@
                         <div class="imojyBannerDetails">
                             <div class="headershhh">
                                 <h2>{{__('home.EMOJI')}}</h2>
-                                <h2>{{$emoje->title_en}}</h2>
-                                <h2>{{$emoje->sub_title_en}}</h2>
+                                <h2>{{$emoje->title}}</h2>
+                                <h2>{{$emoje->sub_title}}</h2>
                             </div>
                             <div class="paragraphs">
                                 <p>{{__('home.Closest dates')}}</p>

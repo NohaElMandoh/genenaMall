@@ -14,7 +14,7 @@
                             <span class="sricon">
                               {!!$service->image!!}
                             </span>
-                            <h2 class="sername"> {{$service->title_en}}</h2>
+                            <h2 class="sername"> {{$service->title}}</h2>
                         </a>
                     </div>
                 </div>

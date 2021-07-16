@@ -89,7 +89,7 @@
                                         </li>
                                         @foreach ($services as $service)
                                             <li>
-                                                <a href="{{ route('items_service', $service->id) }}">{{ $service->title_en }}
+                                                <a href="{{ route('items_service', $service->id) }}">{{ $service->title }}
                                                     <span class="numn">{{ $service->items->count() }}</span></a>
                                             </li>
                                         @endforeach
@@ -118,8 +118,8 @@
                                                 <div class="content">
                                                     {{-- <h2 class="New ">  offer </h2> --}}
 
-                                                    <h1 class="Name">{{ $item->title_en }}</h1>
-                                                    <p class="lead">{{ $item->short_desc_en }}</p>
+                                                    <h1 class="Name">{{ $item->title }}</h1>
+                                                    <p class="lead">{{ $item->short_desc }}</p>
                                                     {{-- <div class="more">
                                         <a><span>from 24 Jul 2020 </span></a>
                                     </div> --}}
@@ -263,18 +263,18 @@
                 success: function(data) {
                     if (data.success == true) {
 
-                        $('#modal_title').text(data.result.title_en);
+                        $('#modal_title').text(data.result.title);
 
-                        $('#mid_desc').html(data.result.desc_en);
-                        $('#long_desc').html(data.result.long_desc_en);
-                        $('.cattiltle').text(data.result.title_en);
+                        $('#mid_desc').html(data.result.desc);
+                        $('#long_desc').html(data.result.long_desc);
+                        $('.cattiltle').text(data.result.title);
                         // if (data.offer != 0) {
 
                         //     $('.mod_title').html('offer/' + data.result.title_en);
                         //     $('.offer_box').html('offer');
                         //     $('.offer_box').show();
                         // } else
-                        $('.mod_title').html(data.result.title_en);
+                        $('.mod_title').html(data.result.title);
                         $("#main_image").attr('src', x);
                         $("#model2_image").attr('src', x);
                         $("#bannar_image").attr('src', y);

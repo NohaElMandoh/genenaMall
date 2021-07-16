@@ -99,7 +99,7 @@
                                         @foreach ($categories as $category)
 
                                             <li>
-                                                <a href="{{ route('offersByCategory', [$category->id, 0]) }}">{{ $category->name_en }}
+                                                <a href="{{ route('offersByCategory', [$category->id, 0]) }}">{{ $category->name }}
                                                     <span class="numn">
                                                         @php
                                                             $count_items = 0;
@@ -145,8 +145,8 @@
                                                         offer @else New @endif
                                                     </h2>
 
-                                                    <h1 class="Name">{{ $item->title_en }}</h1>
-                                                    <p class="lead">{{ $item->short_desc_en }}</p>
+                                                    <h1 class="Name">{{ $item->title }}</h1>
+                                                    <p class="lead">{{ $item->short_desc }}</p>
                                                     <div class="more">
                                                         <a><span>from 24 Jul 2020 </span></a>
                                                     </div>
@@ -289,20 +289,20 @@
                 success: function(data) {
                     if (data.success == true) {
 
-                        $('#modal_title').text(data.result.title_en);
-                        $('.cattiltle').text(data.result.title_en);
+                        $('#modal_title').text(data.result.title);
+                        $('.cattiltle').text(data.result.title);
 
 
-                        $('#mid_desc').html(data.result.mid_desc_en);
-                        $('#long_desc').html(data.result.long_desc_en);
+                        $('#mid_desc').html(data.result.mid_desc);
+                        $('#long_desc').html(data.result.long_desc);
 
                         if (data.offer != 0) {
 
-                            $('.mod_title').html('offer/' + data.result.title_en);
+                            $('.mod_title').html('offer/' + data.result.title);
                             $('.offer_box').html('offer');
                             $('.offer_box').show();
                         } else
-                            $('.mod_title').html(data.result.title_en);
+                            $('.mod_title').html(data.result.title);
                         $("#main_image").attr('src', x);
                         $("#bannar_image").attr('src', y);
                         $("#model2_image").attr('src', x);

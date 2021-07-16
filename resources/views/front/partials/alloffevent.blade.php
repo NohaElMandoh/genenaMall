@@ -6,11 +6,11 @@
                     <div class="alloffeventItemAlone">
                         <a href="{{route('offer')}}" class="Darktop">
                             <p class="IconTitle"><span> <i class="fa fa-calendar-o"
-                                        aria-hidden="true"></i></span> All Offers And Events</p>
+                                        aria-hidden="true"></i></span> {{__('home.All Offers And Events')}}</p>
                         </a>
                         <div class="wirhBottom">
                             <a class="IconTitle" href="#"><span> <i class="fa fa-map-marker"
-                                        aria-hidden="true"></i></span> Show on Map </a>
+                                        aria-hidden="true"></i></span> {{__('home.Show on Map')}} </a>
                         </div>
                     </div>
                 </div>
@@ -153,9 +153,9 @@
                                                         alt="photos">
                                                 </div>
                                                 <div class="content">
-                                                    <h2 class="New">@if(count($item->offers) > 0)   offer @else New @endif</h2>
-                                                    <h1 class="Name">{{ $item->title_en }}</h1>
-                                                    <p class="lead">{{ $item->short_desc_en }}</p>
+                                                    <h2 class="New">@if(count($item->offers) > 0)   {{__('home.offer')}} @else {{__('home.new')}} @endif</h2>
+                                                    <h1 class="Name">{{ $item->title }}</h1>
+                                                    <p class="lead">{{ $item->short_desc }}</p>
                                                     <div class="more">
                                                         <a><span>from 24 Jul 2020 </span></a>
                                                     </div>

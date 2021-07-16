@@ -26,10 +26,10 @@
                         @if(!empty($photos))
                         @foreach($photos as $photo)
                         <li class="col-xs-6 col-sm-4 col-md-3"  data-src="{{ Voyager::image($photo->main_image) }}"
-                         data-sub-html="<h4>{{$photo->title_en}}</h4><p>{{$photo->desc_en}}</p>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
+                         data-sub-html="<h4>{{$photo->title}}</h4><p>{{$photo->desc}}</p>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
                             <a href="">
                                 <img class="img-responsive" src="{{ Voyager::image($photo->main_image) }}" alt="Thumb-2">
-                                <span class="imageName">{{$photo->title_en}}</span>
+                                <span class="imageName">{{$photo->title}}</span>
                             </a>
                         </li>
                        @endforeach

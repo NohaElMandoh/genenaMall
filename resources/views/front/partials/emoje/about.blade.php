@@ -8,7 +8,7 @@
                         <p>Say goodbye to the boredom of the school classroom. At Emoji, every day will start with a workout, breakfast at the Foodmama restaurant, and games with camp leaders.</p>
                         <p>Then the children have a rich program: active games, ice skating, children's yoga, flying in a wind tunnel and much more useful and exciting. In the afternoon, the guys are fed a delicious lunch, afternoon snack and
                             dinner.</p> --}}
-                            <p>    {!!$emoje->desc_en!!} </p>
+                            <p>    {!!$emoje->desc!!} </p>
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-5 col-sm-6 col-xs-12">

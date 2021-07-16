@@ -101,7 +101,7 @@
                                         @foreach ($categories as $category)
                                             @if (!empty($unit_id))
                                                 <li>
-                                                    <a href="{{ route('itemsByCategory', [$category->id, $unit_id]) }}">{{ $category->name_en }}
+                                                    <a href="{{ route('itemsByCategory', [$category->id, $unit_id]) }}">{{ $category->name }}
                                                         <span class="numn">
                                                             @php
                                                                 $count_items = 0;
@@ -119,7 +119,7 @@
                                                 </li>
                                             @else
                                                 <li>
-                                                    <a href="{{ route('itemsByCategory', [$category->id, 0]) }}">{{ $category->name_en }}
+                                                    <a href="{{ route('itemsByCategory', [$category->id, 0]) }}">{{ $category->name }}
                                                         <span class="numn"></span></a>
                                                 </li>
                                             @endif
@@ -151,8 +151,8 @@
                                                         offer @else New @endif
                                                     </h2>
 
-                                                    <h1 class="Name">{{ $item->title_en }}</h1>
-                                                    <p class="lead">{{ $item->short_desc_en }}</p>
+                                                    <h1 class="Name">{{ $item->title }}</h1>
+                                                    <p class="lead">{{ $item->short_desc }}</p>
                                                     <div class="more">
                                                         <a><span>from 24 Jul 2020 </span></a>
                                                     </div>
@@ -280,6 +280,35 @@
 @endsection
 @section('script')
     <script>
+          $('#newsLetterForm').on('submit', function(event) {
+                    event.preventDefault();
+      
+                    let email = $('#news_email').val();
+        
+                    $.ajax({
+                        url: "newsLetter",
+                        type: "POST",
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                           
+                            email: email,
+                         
+                        },
+                        success: function(response) {
+        
+                            $(".alert-success_sub").css("display", "block");
+                            $(".alert-success_sub").html('<P style="text-align:center">Thank you.').hide()
+                                .fadeIn(1500, function() {
+                                    $('.alert-success_sub');
+                                }).fadeOut(1500, function() {
+                                    $('.alert-success_sub');
+                                }).reset();
+                              
+                        },
+                    });
+                    document.getElementById("newsLetterForm").reset();
+                });
+        
         $(document).on('click', '#model1', function(e) {
             // var item_id = $('#item_id').val();
             var item_id = $(this).attr("data-id");
@@ -295,20 +324,20 @@
                 success: function(data) {
                     if (data.success == true) {
 
-                        $('#modal_title').text(data.result.title_en);
-                        $('.cattiltle').text(data.result.title_en);
+                        $('#modal_title').text(data.result.title);
+                        $('.cattiltle').text(data.result.title);
 
 
-                        $('#mid_desc').html(data.result.mid_desc_en);
-                        $('#long_desc').html(data.result.long_desc_en);
+                        $('#mid_desc').html(data.result.mid_desc);
+                        $('#long_desc').html(data.result.long_desc);
 
                         if (data.offer != 0) {
 
-                            $('.mod_title').html('offer/' + data.result.title_en);
+                            $('.mod_title').html('offer/' + data.result.title);
                             $('.offer_box').html('offer');
                             $('.offer_box').show();
                         } else {
-                            $('.mod_title').html(data.result.title_en);
+                            $('.mod_title').html(data.result.title);
                             $('.offer_box').html('new');
                             $('.offer_box').show();
                         }

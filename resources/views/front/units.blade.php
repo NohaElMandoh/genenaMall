@@ -20,10 +20,10 @@
                                 <img src="{{Voyager::image($unit->image)}}">
                             </div>
                             <div class="details">
-                                <h2 class="nameshose">{{$unit->title_en}}</h2>
+                                <h2 class="nameshose">{{$unit->title}}</h2>
                                 <p class="discription">  @if(!empty($unit->categories))  
                                     @foreach($unit->categories  as $category )  
-                                     {{$category->name_en}}@if (!$loop->last),@endif
+                                     {{$category->name}}@if (!$loop->last),@endif
                                         @endforeach
                                         @endif</p>
                             </div>

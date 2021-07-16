@@ -14,7 +14,7 @@
                                 <img src="{{asset('front/images/slider/bg-question.svg')}}">
                             </div>
                             <div class="buttons">
-                                <button type="button" class="btn btn-primary"  onclick="qs_details({{$ques->id}})">{{$ques->question_en}}</button>
+                                <button type="button" class="btn btn-primary"  onclick="qs_details({{$ques->id}})">{{$ques->question}}</button>
                             </div>
 
                         </div>

@@ -16,16 +16,16 @@
                         </div>
                         <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
                             <div class="emojdtals">
-                                <p class="disck">{{ $emoje->what_desc_en }}</p>
+                                <p class="disck">{{ $emoje->what_desc }}</p>
                             </div>
                             <div class="liuldet">
                                 <ul>
                                     @if (!empty($what_qas))
                                         @foreach ($what_qas as $qa)
                                             <li>
-                                                <h2 class="lih">{{ $qa->question_en }} <span><a href="@if ($qa->link) {{ $qa->link }} @endif"
-                                                            class="link">{{ $qa->text_link_en }}</a></span>?</h2>
-                                                <p class="lip">{!! $qa->answer_en !!}</p>
+                                                <h2 class="lih">{{ $qa->question }} <span><a href="@if ($qa->link) {{ $qa->link }} @endif"
+                                                            class="link">{{ $qa->text_link }}</a></span>?</h2>
+                                                <p class="lip">{!! $qa->answer !!}</p>
                                             </li>
                                         @endforeach
                                     @endif
@@ -51,16 +51,16 @@
                         </div>
                         <div class="col-lg-8 col-md-8 col-sm-9 col-xs-12">
                             <div class="emojdtals">
-                                <p class="disck">{{ $emoje->why_desc_en }}</p>
+                                <p class="disck">{{ $emoje->why_desc }}</p>
                             </div>
                             <div class="liuldet">
                                 <ul>
                                     @if (!empty($why_qas))
                                     @foreach ($why_qas as $qa)
                                         <li>
-                                            <h2 class="lih">{{ $qa->question_en }} <span><a href="@if ($qa->link) {{ $qa->link }} @endif"
-                                                        class="link">{{ $qa->text_link_en }}</a></span>?</h2>
-                                            <p class="lip">{!! $qa->answer_en !!}</p>
+                                            <h2 class="lih">{{ $qa->question }} <span><a href="@if ($qa->link) {{ $qa->link }} @endif"
+                                                        class="link">{{ $qa->text_link }}</a></span>?</h2>
+                                            <p class="lip">{!! $qa->answer !!}</p>
                                         </li>
                                     @endforeach
                                 @endif

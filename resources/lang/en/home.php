@@ -12,7 +12,7 @@ return [
     'shops' => 'Shops',
     'resturants' => 'Resturants',
     'kids' => 'kids',
-    'media' => 'Mdia',
+    'media' => 'Media',
     'offers' => 'Offers',
     'services' => 'Services',
     'photos' => 'Photos',
@@ -32,7 +32,12 @@ return [
     'EMOJI'=>'EMOJI',
     'Closest dates'=>'Closest dates for the sessions',
     'FOR MORE INFO CALL'=>'FOR MORE INFO CALL',
-    'ext'=>'ext. 123'
+    'ext'=>'ext. 123',
+    'All Offers And Events'=>'All Offers And Events',
+    'Show on Map'=>'Show on Map',
+    'offer'=>'Offer',
+    'new'=>'New',
+    'Terms and rules'=>'Terms and rules'
 
 
 ];

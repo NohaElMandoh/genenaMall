@@ -16,7 +16,7 @@
                         </div>
                         <div class="Details">
                             <p>{{$website->footer_description}}</p>
-                            <a href="#">Terms and rules</a>
+                            <a href="#">{{__('home.Terms and rules')}}</a>
                         </div>
                     </div>
                 </div>

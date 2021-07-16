@@ -8,7 +8,7 @@
         <div class="discription">
             <div class="container">
                 <div class="disccontent">
-                    {!!$website->media_desc_en!!}
+                    {!!$website->media_desc!!}
                 </div>
             </div>
         </div>
@@ -53,6 +53,35 @@
 @endsection
 @section('script')
 <script>
+      $('#newsLetterForm').on('submit', function(event) {
+                    event.preventDefault();
+      
+                    let email = $('#news_email').val();
+        
+                    $.ajax({
+                        url: "newsLetter",
+                        type: "POST",
+                        data: {
+                            "_token": "{{ csrf_token() }}",
+                           
+                            email: email,
+                         
+                        },
+                        success: function(response) {
+        
+                            $(".alert-success_sub").css("display", "block");
+                            $(".alert-success_sub").html('<P style="text-align:center">Thank you.').hide()
+                                .fadeIn(1500, function() {
+                                    $('.alert-success_sub');
+                                }).fadeOut(1500, function() {
+                                    $('.alert-success_sub');
+                                }).reset();
+                              
+                        },
+                    });
+                    document.getElementById("newsLetterForm").reset();
+                });
+        
 function qs_details(id) {
  
     $.ajax({
@@ -62,9 +91,9 @@ function qs_details(id) {
         success: function (data) {
             if (data.success == true) {
                
-                $('.modal-title').text(data.result.question_en);
+                $('.modal-title').text(data.result.question);
 
-                $('.modalquescont p').html(data.result.answer_en);
+                $('.modalquescont p').html(data.result.answer);
 
                 $('#exampleModal').modal('show');
               

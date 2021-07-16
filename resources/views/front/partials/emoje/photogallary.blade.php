@@ -7,29 +7,29 @@
             <div class="demo-gallery">
                 <ul id="lightgallery" class="list-unstyled row">
                     <li class="col-xs-12 col-sm-4 col-md-3" data-src="{{ Voyager::image($gallary[0]->main_image) }}" data-sub-html="
-                               <h4>{{$gallary[0]->title_en}}</h4>
-                               <p>{{$gallary[0]->desc_en}}</p>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
+                               <h4>{{$gallary[0]->title}}</h4>
+                               <p>{{$gallary[0]->desc}}</p>" data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
                         <a href="">
                             <img class="img-responsive" src="{{ Voyager::image($gallary[0]->main_image) }}" alt="Thumb-1">
                         </a>
 
                     </li>
                     <li class="col-xs-6 col-sm-4 col-md-3" data-src="{{ Voyager::image($gallary[1]->main_image) }}" 
-                    data-sub-html=" <h4>{{$gallary[1]->title_en}}</h4>
-                    <p>{{$gallary[1]->desc_en}}</p>"
+                    data-sub-html=" <h4>{{$gallary[1]->title}}</h4>
+                    <p>{{$gallary[1]->desc}}</p>"
                         data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
                         <a href="">
                             <img class="img-responsive" src="{{ Voyager::image($gallary[1]->main_image) }}" alt="Thumb-2">
                         </a>
                     </li>
                     <li class="col-xs-6 col-sm-4 col-md-3" data-src="{{ Voyager::image($gallary[2]->main_image) }}"
-                     data-sub-html="<h4>{{$gallary[2]->title_en}}</h4> <p>{{$gallary[2]->desc_en}}</p>"
+                     data-sub-html="<h4>{{$gallary[2]->title}}</h4> <p>{{$gallary[2]->desc}}</p>"
                         data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
                         <a href="">
                             <img class="img-responsive" src="{{ Voyager::image($gallary[2]->main_image) }}" alt="Thumb-3">
                         </a>
                     </li>
-                    <li class="col-xs-6 col-sm-4 col-md-3" data-src="{{ Voyager::image($gallary[3]->main_image) }}" data-sub-html="       <h4>{{$gallary[3]->title_en}}</h4>             <p>{{$gallary[3]->desc_en}}</p>"
+                    <li class="col-xs-6 col-sm-4 col-md-3" data-src="{{ Voyager::image($gallary[3]->main_image) }}" data-sub-html="       <h4>{{$gallary[3]->title}}</h4>             <p>{{$gallary[3]->desc}}</p>"
                         data-pinterest-text="Pin it1" data-tweet-text="share on twitter 1">
                         <a href="">
                             <img class="img-responsive" src="{{ Voyager::image($gallary[3]->main_image) }}" alt="Thumb-4">

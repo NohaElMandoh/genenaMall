@@ -7,7 +7,7 @@
     <div class="container">
         <div class="whatcontent">
             <div class="title">
-                <h2>What to do ?</h2>
+                <h2>{{__('media.What to do ?')}}</h2>
             </div>
             <div class="stepsss">
                 <div class="row">
@@ -20,7 +20,7 @@
                             </div>
                             <div class="details">
                                 <h1 class="numste">0{{$step->step}}.</h1>
-                                <p class="dislead">{{$step->title_en}}</p>
+                                <p class="dislead">{{$step->title}}</p>
                                 <a class="link" href="#">{{__('media.more details')}}</a>
                             </div>
                         </div>
